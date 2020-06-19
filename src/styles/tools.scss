@@ -1,0 +1,5 @@
+@import "./settings.scss";
+
+@function base-spacing($amount: 1) {
+  @return $amount * $base-spacing-unit;
+}
