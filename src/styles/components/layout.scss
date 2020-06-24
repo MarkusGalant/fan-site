@@ -1,23 +1,79 @@
 @import "./../settings.scss";
 @import "./../tools.scss";
-
 .layout {
-  display: flex;
-
-  .header {
     display: flex;
-    flex-direction: column;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    min-height: base-spacing(9);
-    background: $almos-black;
-    z-index: 25 !important;
-  }
-
-  .footer {
-    display: flex;
-  }
+    .header {
+        display: flex;
+        flex-direction: row;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        min-height: base-spacing(7);
+        background: $almos-black;
+        z-index: 25 !important;
+    }
+    .footer {
+        display: flex;
+    }
+    .header_logo {
+        width: 330px;
+        padding-top: 10px;
+        padding-left: 170px;
+    }
+    .header_logo img {
+        height: 37px;
+    }
+    .menu {
+        width: 500px;
+        height: 20px;
+        display: flex;
+    }
+    .menu a {
+        text-decoration: none;
+        margin-left: 50px;
+    }
+    .menu li {
+        font-size: 18px;
+        justify-content: space-around;
+        align-self: center;
+        list-style: none;
+        color: $almos-grey;
+    }
+    .menu a li:hover {
+        color: $orange-fan;
+        transition: linear 0.2s;
+    }
+    .block_header {
+        padding-top: 18px;
+        padding-left: 100px;
+        margin: 0 auto;
+        width: 300px;
+        float: right;
+        display: flex;
+    }
+    .search {
+        font-size: 18px;
+        padding-right: 50px;
+    }
+    .search a {
+        color: $almos-grey;
+        text-decoration: none;
+    }
+    .sign {
+        font-size: 18px;
+    }
+    .sign a {
+        color: $almos-grey;
+        text-decoration: none;
+    }
+    .sign a:hover {
+        color: $orange-fan;
+        transition: linear 0.2s;
+    }
+    .search a:hover {
+        color: $orange-fan;
+        transition: linear 0.2s;
+    }
 }
