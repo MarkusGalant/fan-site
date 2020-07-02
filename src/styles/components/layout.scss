@@ -1,7 +1,7 @@
 @import "./../settings.scss";
 @import "./../tools.scss";
 .layout {
-    display: flex;
+    display: block;
     .header {
         display: flex;
         flex-direction: row;
@@ -15,7 +15,10 @@
         z-index: 25 !important;
     }
     .footer {
-        display: flex;
+        min-height: base-spacing(25);
+        display: grid;
+        grid-template-areas: "footer-roof" "footer-floor";
+        grid-template-rows: 2fr 2fr;
     }
     .header_logo {
         width: 330px;
@@ -23,10 +26,10 @@
         padding-left: 170px;
     }
     .header_logo img {
-        height: 37px;
+        height: bace-spacing(4.625);
     }
     .menu {
-        width: 500px;
+        width: base-spacing(62.5);
         height: 20px;
         display: flex;
     }
@@ -35,26 +38,25 @@
         margin-left: 50px;
     }
     .menu li {
-        font-size: 18px;
+        font-size: font-change(2);
         justify-content: space-around;
         align-self: center;
         list-style: none;
         color: $almos-grey;
     }
     .menu a li:hover {
-        color: $orange-fan;
+        color: $light-orange;
         transition: linear 0.2s;
     }
     .block_header {
         padding-top: 18px;
         padding-left: 100px;
         margin: 0 auto;
-        width: 300px;
+        width: base-spacing(37.5);
         float: right;
         display: flex;
     }
     .search {
-        font-size: 18px;
         padding-right: 50px;
     }
     .search a {
@@ -62,18 +64,114 @@
         text-decoration: none;
     }
     .sign {
-        font-size: 18px;
+        font-size: font-change(2);
     }
     .sign a {
         color: $almos-grey;
         text-decoration: none;
     }
     .sign a:hover {
-        color: $orange-fan;
+        color: $light-orange;
         transition: linear 0.2s;
     }
     .search a:hover {
-        color: $orange-fan;
+        color: $light-orange;
         transition: linear 0.2s;
+    }
+    .Container {
+        width: 100%;
+        background-color: #000;
+        height: 200px;
+    }
+    /*Footer-roof*/
+    .footer_roof {
+        background-color: black;
+        display: grid;
+        grid-area: footer-roof;
+        grid-template-columns: 1.4fr 0.5fr 1.4fr 4fr 5fr 0.7fr;
+        grid-template-areas: " .  footer-roof-img  footer-roof-text footer-roof-box footer-roof-link .";
+    }
+    .footer_roof_img {
+        align-self: center;
+        width: base-spacing(6);
+        grid-area: footer-roof-img;
+    }
+    .footer_roof_text {
+        color: white;
+        align-self: center;
+        grid-area: footer-roof-text;
+    }
+    .footer_roof_border {
+        display: grid;
+        font-weight: bold;
+        color: $dark-grey;
+        align-self: center;
+        grid-area: footer-roof-box;
+    }
+    .footer_roof_border_text {
+        color: $dark-grey2;
+        justify-self: left;
+        padding: 3px;
+        border: 1px solid $dark-grey2;
+    }
+    .footer_roof_link {
+        align-self: center;
+        padding-right: 30px;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        grid-area: footer-roof-link;
+    }
+    .footer_roof_link:last-child {
+        padding-right: 0;
+    }
+    .footer_roof_link a {
+        text-decoration: none;
+        color: $dark-grey2;
+        font-size: font-change(2);
+    }
+    .footer_roof_link a:hover {
+        color: $light-orange;
+        transition: linear 0.2s;
+    }
+    /*Footer-floor*/
+    .footer_floor {
+        background-color: $dark-grey3;
+        grid-area: footer-floor;
+        display: grid;
+        grid-template-columns: 0.4fr 0.6fr 0.8fr 1fr 1fr;
+        grid-template-areas: ". footer-floor-title footer-floor-link . footer-floor-telegram-box";
+    }
+    .footer_floor_title {
+        color: $dark-grey;
+        font-size: font-change(2);
+        align-self: center;
+        grid-area: footer-floor-title;
+    }
+    .footer_floor_link {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        align-self: center;
+        grid-area: footer-floor-link;
+    }
+    .footer_floor_link a {
+        color: $almos-grey;
+        text-decoration: none;
+    }
+    .footer_floor_telegram_border {
+        display: grid;
+        grid-area: footer-floor-telegram-box;
+    }
+    .footer_floor_telegram {
+        padding: 10px 10px 8px 10px;
+        justify-self: start;
+        border: 1px solid $dark-grey;
+        align-self: center;
+    }
+    .footer_floor_telegram:hover {
+        border: 1px solid $turquoise;
+    }
+    .telegram_plane {
+        width: 30px;
+        height: 30px;
     }
 }
