@@ -7,37 +7,18 @@ export interface IProps {
 const Layout = ({ children }: IProps): ReactElement => (
   <div className="layout">
     <header className="header">
-      <div className="header-container"></div>
       <a className="header_logo" href="">
-        {" "}
-        <img src="http://fanserial.net/images/logo.svg" alt="" />
+        <img
+          className="header_logo_img"
+          src="http://fanserial.net/images/logo.svg"
+          alt=""
+        />
       </a>
-      <ul className="menu">
-        <a href="">
-          {" "}
-          <li>New series</li>
-        </a>
-        <a href="">
-          {" "}
-          <li>Popular</li>
-        </a>
-        <a href="">
-          {" "}
-          <li>News</li>
-        </a>
-        <a href="">
-          {" "}
-          <li>All series</li>
-        </a>
-      </ul>
-      <div className="block_header">
-        <div className="search">
-          <a href="">Search</a>{" "}
-        </div>
-        <div className="sign">
-          {" "}
-          <a href="">Sign in</a>{" "}
-        </div>
+      <div className="menu">
+        <a href="">New series</a>
+        <a href="">Popular</a>
+        <a href="">News</a>
+        <a href="">All series</a>
       </div>
     </header>
     {children}

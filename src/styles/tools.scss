@@ -1,5 +1,8 @@
 @import "./settings.scss";
-
 @function base-spacing($amount: 1) {
-  @return $amount * $base-spacing-unit;
+    @return $amount * $base-spacing-unit;
+}
+
+@function font-change($amount: 1) {
+    @return $amount+$base-font-size;
 }
