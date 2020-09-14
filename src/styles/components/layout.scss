@@ -1,23 +1,45 @@
 @import "./../settings.scss";
 @import "./../tools.scss";
-
 .layout {
-  display: flex;
-
-  .header {
     display: flex;
-    flex-direction: column;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    min-height: base-spacing(9);
-    background: $almos-black;
-    z-index: 25 !important;
-  }
-
-  .footer {
-    display: flex;
-  }
+    .header {
+        display: grid;
+        grid-template-columns: 0.742fr 0.6fr 1fr 2fr;
+        grid-template-areas: ". header-logo header-menu . ";
+        position: fixed !important;
+        top: 0 !important;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        min-height: base-spacing(7.5);
+        background: $almos-black;
+        z-index: 25 !important;
+    }
+    .footer {
+        display: flex;
+    }
+    .header_logo {
+        align-self: center;
+        grid-area: header-logo;
+    }
+    .header_logo_img {
+        height: base-spacing(4.625);
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-area: header-menu;
+        align-self: center;
+        width: base-spacing(62.5);
+        height: base-spacing(2.5);
+    }
+    .menu a {
+        text-decoration: none;
+        color: $almos-grey;
+        font-size: font-change(2);
+    }
+    .menu a:hover {
+        color: $light-orange;
+        transition: linear 0.2s;
+    }
 }
